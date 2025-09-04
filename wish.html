@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onam Wish</title>
+    <title>Onam Wish ✨</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Floating Background -->
+    <div class="bg-decoration">
+        <div class="floating-flower">🌺</div>
+        <div class="floating-flower">🌸</div>
+        <div class="floating-flower">🏵️</div>
+        <div class="floating-flower">🌼</div>
+    </div>
+
     <div class="container">
         <div class="wish-card">
-            <h1 id="wishMessage" class="wish-title">Loading...</h1>
+            <h1 id="wishMessage" class="wish-title">Loading your magical wish...</h1>
             
             <div class="onam-gallery">
                 <img src="assets/onam1.jpg" alt="Onam Celebration" class="gallery-img">
                 <img src="assets/onam2.jpg" alt="Pookalam" class="gallery-img">
+                <img src="assets/pookalam.png" alt="Traditional Pookalam" class="gallery-img">
             </div>
             
             <div class="decorative-elements">
@@ -23,21 +32,23 @@
             </div>
             
             <div class="wish-footer">
-                <p>Wishing you prosperity, happiness, and good health!</p>
+                <p style="font-size: 1.3rem; color: #666; margin-bottom: 20px; line-height: 1.6;">
+                    🏵️ May this Onam bring you abundant joy, prosperity, and happiness! 🏵️<br>
+                    <em>May King Mahabali's blessings be with you always</em>
+                </p>
                 <button onclick="window.location.href='create.html'" class="create-own-btn">
-                    Create Your Own Wish
+                    ✨ Create Your Own Magical Wish
                 </button>
             </div>
             
-            <!-- Simple visitor counter -->
+            <!-- Enhanced visitor counter -->
             <div class="visitor-count">
-                Visitors: <span id="visitorCount">0</span>
+                <span id="visitorCount">0</span> people have seen this wish
             </div>
         </div>
     </div>
     <script src="script.js"></script>
     <script>
-        // Load wish on page load
         window.onload = function() {
             loadWish();
             incrementVisitor();

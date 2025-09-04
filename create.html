@@ -3,43 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Onam Wish</title>
+    <title>Create Your Onam Wish ✨</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Floating Background -->
+    <div class="bg-decoration">
+        <div class="floating-flower">🌺</div>
+        <div class="floating-flower">🌸</div>
+        <div class="floating-flower">🏵️</div>
+        <div class="floating-flower">🌼</div>
+    </div>
+
     <div class="container">
         <div class="form-card">
-            <h2>Create Your Personal Onam Wish</h2>
-            
-            <div class="form-group">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" placeholder="Enter your name" oninput="updatePreview()">
+            <div class="form-header">
+                <h2>Create Your Magical Onam Wish</h2>
+                <p>✨ Spread joy and prosperity this Onam season ✨</p>
             </div>
             
-            <!-- Live Preview -->
+            <div class="form-group">
+                <label for="name">🏷️ Your Beautiful Name:</label>
+                <div class="input-container">
+                    <input 
+                        type="text" 
+                        id="name" 
+                        placeholder="Enter your name to create magic..." 
+                        oninput="updatePreview()"
+                        maxlength="50"
+                    >
+                </div>
+            </div>
+            
+            <!-- Enhanced Live Preview -->
             <div class="preview-card" id="preview">
                 <h3 id="preview-text">Your Name wishes you a Happy Onam! 🌺</h3>
                 <div class="onam-images">
-                    <img src="assets/onam1.jpg" alt="Onam" class="fade-in">
+                    <img src="assets/onam1.jpg" alt="Onam Celebration" class="gallery-img">
+                    <img src="assets/onam2.jpg" alt="Pookalam" class="gallery-img">
                 </div>
+                <p style="margin-top: 15px; opacity: 0.9;">✨ This is how your wish will look ✨</p>
             </div>
             
             <div class="buttons">
                 <button onclick="generateWish()" class="generate-btn" id="generateBtn" disabled>
-                    Generate My Wish Link 🔗
+                    <span id="btnText">🎉 Generate My Magical Wish Link</span>
                 </button>
             </div>
             
-            <!-- Share Section (hidden initially) -->
+            <!-- Enhanced Share Section -->
             <div class="share-section" id="shareSection" style="display:none;">
-                <h3>Your wish is ready! Share it:</h3>
+                <h3>🎊 Your Magical Wish is Ready!</h3>
+                <p style="margin-bottom: 20px; opacity: 0.9;">Share this beautiful Onam wish with your loved ones</p>
+                
                 <div class="share-link">
-                    <input type="text" id="wishLink" readonly>
-                    <button onclick="copyLink()">Copy Link</button>
+                    <input type="text" id="wishLink" readonly placeholder="Your magical link will appear here...">
+                    <button onclick="copyLink()">📋 Copy</button>
                 </div>
+                
                 <div class="share-buttons">
-                    <button onclick="shareToWhatsApp()" class="whatsapp-btn">Share on WhatsApp</button>
-                    <button onclick="shareToFacebook()" class="facebook-btn">Share on Facebook</button>
+                    <button onclick="shareToWhatsApp()" class="whatsapp-btn">
+                        💬 Share on WhatsApp
+                    </button>
+                    <button onclick="shareToFacebook()" class="facebook-btn">
+                        📘 Share on Facebook
+                    </button>
                 </div>
             </div>
         </div>

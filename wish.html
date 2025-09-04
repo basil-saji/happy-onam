@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onam Wish</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="wish-card">
+            <h1 id="wishMessage" class="wish-title">Loading...</h1>
+            
+            <div class="onam-gallery">
+                <img src="assets/onam1.jpg" alt="Onam Celebration" class="gallery-img">
+                <img src="assets/onam2.jpg" alt="Pookalam" class="gallery-img">
+            </div>
+            
+            <div class="decorative-elements">
+                <div class="floating-element">🌺</div>
+                <div class="floating-element">🥥</div>
+                <div class="floating-element">🍌</div>
+            </div>
+            
+            <div class="wish-footer">
+                <p>Wishing you prosperity, happiness, and good health!</p>
+                <button onclick="window.location.href='create.html'" class="create-own-btn">
+                    Create Your Own Wish
+                </button>
+            </div>
+            
+            <!-- Simple visitor counter -->
+            <div class="visitor-count">
+                Visitors: <span id="visitorCount">0</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Load wish on page load
+        window.onload = function() {
+            loadWish();
+            incrementVisitor();
+        }
+    </script>
+</body>
+</html>

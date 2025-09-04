@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Onam Wish</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-card">
+            <h2>Create Your Personal Onam Wish</h2>
+            
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" oninput="updatePreview()">
+            </div>
+            
+            <!-- Live Preview -->
+            <div class="preview-card" id="preview">
+                <h3 id="preview-text">Your Name wishes you a Happy Onam! 🌺</h3>
+                <div class="onam-images">
+                    <img src="assets/onam1.jpg" alt="Onam" class="fade-in">
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <button onclick="generateWish()" class="generate-btn" id="generateBtn" disabled>
+                    Generate My Wish Link 🔗
+                </button>
+            </div>
+            
+            <!-- Share Section (hidden initially) -->
+            <div class="share-section" id="shareSection" style="display:none;">
+                <h3>Your wish is ready! Share it:</h3>
+                <div class="share-link">
+                    <input type="text" id="wishLink" readonly>
+                    <button onclick="copyLink()">Copy Link</button>
+                </div>
+                <div class="share-buttons">
+                    <button onclick="shareToWhatsApp()" class="whatsapp-btn">Share on WhatsApp</button>
+                    <button onclick="shareToFacebook()" class="facebook-btn">Share on Facebook</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -128,3 +128,20 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Add these functions to your existing script.js
+
+// Enhanced name decoding (if not already present)
+function decodeName(encoded) {
+    try {
+        while (encoded.length % 4) {
+            encoded += '=';
+        }
+        return atob(encoded);
+    } catch (e) {
+        return "Someone Special";
+    }
+}
+
+// Keep all your existing functions (encodeName, generateWish, etc.)
+// Just make sure decodeName works properly

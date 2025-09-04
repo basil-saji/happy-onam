@@ -7,50 +7,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Floating Background -->
-    <div class="bg-decoration">
-        <div class="floating-flower">🌺</div>
-        <div class="floating-flower">🌸</div>
-        <div class="floating-flower">🏵️</div>
-        <div class="floating-flower">🌼</div>
+    <!-- Neon Background -->
+    <div class="neon-bg">
+        <div class="neon-grid"></div>
     </div>
 
     <div class="container">
-        <div class="wish-card">
-            <h1 id="wishMessage" class="wish-title">Loading your magical wish...</h1>
+        <div class="wish-card-animated">
+            <!-- Canvas for Pookalam Animation -->
+            <canvas id="pookalamCanvas" width="400" height="400"></canvas>
             
-            <div class="onam-gallery">
-                <img src="assets/onam1.jpg" alt="Onam Celebration" class="gallery-img">
-                <img src="assets/onam2.jpg" alt="Pookalam" class="gallery-img">
-                <img src="assets/pookalam.png" alt="Traditional Pookalam" class="gallery-img">
+            <!-- Animated Text Container -->
+            <div class="animated-text-container">
+                <div id="animatedName" class="neon-text"></div>
+                <div id="animatedMessage" class="neon-message"></div>
             </div>
             
-            <div class="decorative-elements">
-                <div class="floating-element">🌺</div>
-                <div class="floating-element">🥥</div>
-                <div class="floating-element">🍌</div>
-            </div>
-            
-            <div class="wish-footer">
-                <p style="font-size: 1.3rem; color: #666; margin-bottom: 20px; line-height: 1.6;">
-                    🏵️ May this Onam bring you abundant joy, prosperity, and happiness! 🏵️<br>
-                    <em>May King Mahabali's blessings be with you always</em>
-                </p>
-                <button onclick="window.location.href='create.html'" class="create-own-btn">
+            <!-- Traditional elements that appear after animation -->
+            <div class="traditional-elements" id="traditionalElements" style="opacity: 0;">
+                <div class="blessing-text">
+                    🏵️ May King Mahabali's blessings bring you joy, prosperity, and happiness! 🏵️
+                </div>
+                
+                <div class="decorative-elements">
+                    <div class="floating-element">🌺</div>
+                    <div class="floating-element">🥥</div>
+                    <div class="floating-element">🍌</div>
+                </div>
+                
+                <button onclick="window.location.href='create.html'" class="neon-btn">
                     ✨ Create Your Own Magical Wish
                 </button>
-            </div>
-            
-            <!-- Enhanced visitor counter -->
-            <div class="visitor-count">
-                <span id="visitorCount">0</span> people have seen this wish
+                
+                <div class="visitor-count">
+                    <span id="visitorCount">0</span> people have seen this wish
+                </div>
             </div>
         </div>
     </div>
+    
     <script src="script.js"></script>
+    <script src="pookalam-animation.js"></script>
     <script>
         window.onload = function() {
-            loadWish();
+            startWishAnimation();
             incrementVisitor();
         }
     </script>

@@ -3,56 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onam Wish ✨</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Magical Onam Wish ✨</title>
+    <link rel="stylesheet" href="wish-style.css">
 </head>
 <body>
-    <!-- Neon Background -->
-    <div class="neon-bg">
-        <div class="neon-grid"></div>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="bg-particle"></div>
+        <div class="bg-particle"></div>
+        <div class="bg-particle"></div>
+        <div class="bg-particle"></div>
+        <div class="bg-particle"></div>
     </div>
 
-    <div class="container">
-        <div class="wish-card-animated">
-            <!-- Canvas for Pookalam Animation -->
-            <canvas id="pookalamCanvas" width="400" height="400"></canvas>
-            
-            <!-- Animated Text Container -->
-            <div class="animated-text-container">
-                <div id="animatedName" class="neon-text"></div>
-                <div id="animatedMessage" class="neon-message"></div>
+    <!-- Main Content -->
+    <div class="wish-container">
+        <!-- Animated SVG Pookalam -->
+        <div class="pookalam-container">
+            <svg class="pookalam-svg" viewBox="0 0 300 300" width="300" height="300">
+                <!-- Outer Ring -->
+                <g class="pookalam-ring ring-1">
+                    <circle cx="150" cy="150" r="140" fill="none" stroke="#ff6b35" stroke-width="4" stroke-dasharray="880" stroke-dashoffset="880"/>
+                </g>
+                
+                <!-- Petals Layer 1 -->
+                <g class="pookalam-ring ring-2">
+                    <path d="M150,20 Q170,40 150,60 Q130,40 150,20" fill="#ff1744" opacity="0"/>
+                    <path d="M230,80 Q250,100 230,120 Q210,100 230,80" fill="#e91e63" opacity="0"/>
+                    <path d="M280,150 Q260,170 240,150 Q260,130 280,150" fill="#9c27b0" opacity="0"/>
+                    <path d="M230,220 Q250,200 230,180 Q210,200 230,220" fill="#673ab7" opacity="0"/>
+                    <path d="M150,280 Q170,260 150,240 Q130,260 150,280" fill="#3f51b5" opacity="0"/>
+                    <path d="M70,220 Q50,200 70,180 Q90,200 70,220" fill="#2196f3" opacity="0"/>
+                    <path d="M20,150 Q40,170 60,150 Q40,130 20,150" fill="#00bcd4" opacity="0"/>
+                    <path d="M70,80 Q50,100 70,120 Q90,100 70,80" fill="#4caf50" opacity="0"/>
+                </g>
+
+                <!-- Inner Circles -->
+                <g class="pookalam-ring ring-3">
+                    <circle cx="150" cy="150" r="80" fill="none" stroke="#ffeb3b" stroke-width="3" stroke-dasharray="502" stroke-dashoffset="502"/>
+                    <circle cx="150" cy="150" r="50" fill="none" stroke="#ff9800" stroke-width="3" stroke-dasharray="314" stroke-dashoffset="314"/>
+                </g>
+
+                <!-- Center Mandala -->
+                <g class="pookalam-ring ring-4">
+                    <circle cx="150" cy="150" r="25" fill="#ff6b35" opacity="0"/>
+                    <circle cx="150" cy="150" r="15" fill="#ffeb3b" opacity="0"/>
+                    <circle cx="150" cy="150" r="8" fill="#ffffff" opacity="0"/>
+                </g>
+            </svg>
+        </div>
+
+        <!-- Animated Name & Message -->
+        <div class="text-container">
+            <div class="name-text" id="nameText"></div>
+            <div class="message-text" id="messageText"></div>
+        </div>
+
+        <!-- Action Elements -->
+        <div class="action-container" id="actionContainer" style="opacity: 0;">
+            <div class="blessing-text">
+                🌺 May this Onam bring you abundant joy and prosperity! 🌺
             </div>
             
-            <!-- Traditional elements that appear after animation -->
-            <div class="traditional-elements" id="traditionalElements" style="opacity: 0;">
-                <div class="blessing-text">
-                    🏵️ May King Mahabali's blessings bring you joy, prosperity, and happiness! 🏵️
-                </div>
-                
-                <div class="decorative-elements">
-                    <div class="floating-element">🌺</div>
-                    <div class="floating-element">🥥</div>
-                    <div class="floating-element">🍌</div>
-                </div>
-                
-                <button onclick="window.location.href='create.html'" class="neon-btn">
-                    ✨ Create Your Own Magical Wish
-                </button>
-                
-                <div class="visitor-count">
-                    <span id="visitorCount">0</span> people have seen this wish
-                </div>
+            <button class="create-btn" onclick="window.location.href='create.html'">
+                ✨ Create Your Own Wish
+            </button>
+            
+            <div class="visitor-count">
+                👥 <span id="visitorCount">0</span> wishes viewed
             </div>
         </div>
     </div>
-    
-    <script src="script.js"></script>
-    <script src="pookalam-animation.js"></script>
-    <script>
-        window.onload = function() {
-            startWishAnimation();
-            incrementVisitor();
-        }
-    </script>
+
+    <script src="wish-animation.js"></script>
 </body>
 </html>

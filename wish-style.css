@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background: #000;
+    color: white;
+}
+
+/* Spectacular Animated Background */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff6b35, #f7931e, #ffcc02, #8bc34a, #4caf50, #00bcd4, #2196f3, #ff6b35);
+    background-size: 400% 400%;
+    animation: rainbowShift 8s ease infinite;
+    z-index: -2;
+}
+
+@keyframes rainbowShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.bg-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: sparkle 3s linear infinite;
+}
+
+.bg-particle:nth-child(1) { left: 10%; top: 10%; animation-delay: 0s; }
+.bg-particle:nth-child(2) { left: 80%; top: 20%; animation-delay: 1s; }
+.bg-particle:nth-child(3) { left: 20%; top: 80%; animation-delay: 2s; }
+.bg-particle:nth-child(4) { left: 70%; top: 70%; animation-delay: 0.5s; }
+.bg-particle:nth-child(5) { left: 50%; top: 30%; animation-delay: 1.5s; }
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+/* Main Container */
+.wish-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Pookalam Animation Container */
+.pookalam-container {
+    margin: 20px 0;
+    position: relative;
+}
+
+.pookalam-svg {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+    animation: floatRotate 6s ease-in-out infinite;
+}
+
+@keyframes floatRotate {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(180deg); }
+}
+
+/* Pookalam Drawing Animations */
+.ring-1 circle {
+    animation: drawCircle 3s ease-out 0.5s forwards;
+}
+
+.ring-2 path {
+    animation: drawPetal 0.8s ease-out forwards;
+}
+
+.ring-2 path:nth-child(1) { animation-delay: 1.5s; }
+.ring-2 path:nth-child(2) { animation-delay: 1.7s; }
+.ring-2 path:nth-child(3) { animation-delay: 1.9s; }
+.ring-2 path:nth-child(4) { animation-delay: 2.1s; }
+.ring-2 path:nth-child(5) { animation-delay: 2.3s; }
+.ring-2 path:nth-child(6) { animation-delay: 2.5s; }
+.ring-2 path:nth-child(7) { animation-delay: 2.7s; }
+.ring-2 path:nth-child(8) { animation-delay: 2.9s; }
+
+.ring-3 circle:nth-child(1) {
+    animation: drawCircle 2s ease-out 3.2s forwards;
+}
+
+.ring-3 circle:nth-child(2) {
+    animation: drawCircle 1.5s ease-out 3.7s forwards;
+}
+
+.ring-4 circle {
+    animation: drawCenter 1s ease-out forwards;
+}
+
+.ring-4 circle:nth-child(1) { animation-delay: 4.2s; }
+.ring-4 circle:nth-child(2) { animation-delay: 4.5s; }
+.ring-4 circle:nth-child(3) { animation-delay: 4.8s; }
+
+@keyframes drawCircle {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes drawPetal {
+    to { opacity: 1; }
+}
+
+@keyframes drawCenter {
+    to { opacity: 1; }
+}
+
+/* Text Animations */
+.text-container {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.name-text {
+    font-family: 'Fredoka One', cursive;
+    font-size: 4rem;
+    font-weight: 400;
+    margin: 20px 0;
+    background: linear-gradient(45deg, #ff6b35, #ffeb3b, #4caf50, #2196f3, #e91e63);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textRainbow 3s ease infinite;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    letter-spacing: 2px;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.name-text.animate {
+    animation: textRainbow 3s ease infinite, textAppear 1s ease-out 5.5s forwards;
+}
+
+@keyframes textRainbow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes textAppear {
+    to { 
+        transform: scale(1); 
+        opacity: 1; 
+    }
+}
+
+.message-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 
+        0 0 10px #ffeb3b,
+        0 0 20px #ffeb3b,
+        0 0 30px #ffeb3b;
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.message-text.animate {
+    animation: messageSlideIn 1s ease-out 6.8s forwards;
+}
+
+@keyframes messageSlideIn {
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Action Container */
+.action-container {
+    margin-top: 40px;
+    text-align: center;
+    transition: opacity 1.5s ease;
+}
+
+.blessing-text {
+    font-size: 1.3rem;
+    color: #ffeb3b;
+    margin: 30px 0;
+    text-shadow: 0 0 15px #ffeb3b;
+    line-height: 1.6;
+}
+
+.create-btn {
+    background: linear-gradient(45deg, #ff6b35, #ffeb3b, #4caf50);
+    background-size: 200% 200%;
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 20px;
+    box-shadow: 
+        0 8px 25px rgba(255, 107, 53, 0.4),
+        0 0 0 0 rgba(255, 255, 255, 0.4);
+    animation: btnPulse 2s ease-in-out infinite, gradientShift 3s ease infinite;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes btnPulse {
+    0%, 100% { box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4), 0 0 0 0 rgba(255, 255, 255, 0.4); }
+    50% { box-shadow: 0 8px 35px rgba(255, 107, 53, 0.6), 0 0 0 10px rgba(255, 255, 255, 0); }
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.create-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6);
+}
+
+.visitor-count {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 20px;
+    display: inline-block;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .pookalam-svg {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .name-text {
+        font-size: 2.5rem;
+    }
+    
+    .message-text {
+        font-size: 1.4rem;
+    }
+    
+    .create-btn {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+    
+    .wish-container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pookalam-svg {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .name-text {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    .message-text {
+        font-size: 1.2rem;
+    }
+}
